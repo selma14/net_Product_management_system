@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="loading-indicator" style="display: none;">Loading...</div>
+    <h1>Products Management System</h1>
+    <div id="app">
+        <h2>Products</h2>
+        <br>
+        <!--<button style="background-color: #FFB6C1;" onclick="loadProducts()">Load Products</button>-->
+        <div id="product-list-wrapper">
+            <div id="product-list"></div>
+
+        </div>
+        <div id="product-pagination">
+            <button style="background-color: #FFB6C1;" id="prev-products" onclick="prevPage('products')">Previous</button>
+            
+            <span id="product-page-info"></span>
+
+            <button style="background-color: #FFB6C1;" id="next-products" onclick="nextPage('products')">Next</button>
+        </div>
+
+        <br><br><hr><br>
+        <h2>Categories</h2>
+        <br>
+        <div id="category-list-wrapper">
+
+            <div id="category-list"></div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <div>
+                <h1>Add New Product</h1>
+                <br><br>
+                <form id="product-form" enctype="multipart/form-data">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Product Name" required><br>
+
+                    <label for="product-description">Product Description</label>
+                    <textarea id="product-description" placeholder="Product Description" required></textarea><br>
+
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" placeholder="Price" required><br>
+
+                    <label for="category-select">Category</label>
+                    <select id="category-select"></select><br>
+
+                    <label for="product-image">Product Image</label>
+                    <input type="file" id="product-image" accept="image/*"><br>
+
+                    <button type="submit" style="background-color: #FFB6C1;">Create Product</button>
+                </form>
+            </div>
+            <br>
+            <hr>
+            <br><br>
+            <!-- Add New Category Form -->
+            <div>
+                <h1>Add New Category</h1>
+                <br><br>
+                <form id="category-form">
+                    <label for="category-name">Category Name</label>
+                    <input type="text" id="category-name" placeholder="Category Name" required><br>
+
+                    <button type="submit" style="background-color: #FFB6C1;">Create Category</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="/js/script.js"></script>
+
+
+
+</body>
+</html>
